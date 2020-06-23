@@ -16,7 +16,6 @@ function Home() {
     axios
       .post("https://desolate-dawn-05874.herokuapp.com/youtube", toSend)
       .then((res) => {
-        console.log(typeof res.data.Subtitle);
         setVideos(res.data);
       })
 
@@ -37,7 +36,7 @@ function Home() {
         /\/v\/([^#\&\?]{11})/, // /v/<id>
       ];
 
-      // If any pattern matches, return the ID
+      // If any pattern matches, return true or false
       for (i = 0; i < patterns.length; ++i) {
         if (patterns[i].test(url)) {
           return true;
